@@ -66,3 +66,13 @@ origin  git@github.com-personal:vipulmalik93/Coding-And-Dsa.git (push)
 
 The output origin git@github.com-personal:vipulmalik93/Coding-And-Dsa.git (fetch) and origin git@github.com-personal:vipulmalik93/Coding-And-Dsa.git (push) is from the git remote -v command, and it tells you about the remote repository named "origin" associated with your local Git repository
 
+
+<!-- always do in new repo after cloning is to set the url like this:
+    git remote set-url origin git@github.com-personal:vipulmalik93/Coding-And-Dsa.git
+ -->
+
+ for Coding-And-Ds repo:   git remote set-url origin git@github.com-personal:vipulmalik93/Coding-And-Dsa.git
+ for frontendNotes repo:  git remote set-url origin git@github.com-personal:vipulmalik93/frontendNotes.git
+
+ the last part will change from th eurl with the repo name. Always set that url because only than you can have access to push in that otherwise if you don't set that than if you tries to push code there tha it will push to that repo which url is set here.
+
