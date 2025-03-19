@@ -1,0 +1,138 @@
+Q1: What is Recursion?
+A1: Recursion is when a function calls itself to solve smaller versions of the same problem.
+
+    It has two parts:
+    Base Case → Stops the recursion (VERY important, otherwise it will run forever!).
+    Recursive Call → Function calls itself with a smaller input.
+
+    Factorial Example:
+    Formula: n! = n × (n - 1)!
+
+    5! = 5 × 4!
+    4! = 4 × 3!
+    3! = 3 × 2!
+    2! = 2 × 1!
+    1! = 1 → Base Case!
+
+    CODE:
+
+    function factorial(n) {
+    if (n === 0 || n === 1) {  // Base Case
+        return 1;
+    } else {  // Recursive Case
+        return n * factorial(n - 1);
+    }
+    }
+
+    console.log(factorial(5));  // Output: 120
+
+
+    Step-by-Step Dry Run (n = 5):
+    Function Call	What Happens	Returned Value
+    factorial(5)	5 × factorial(4)	waits for factorial(4)
+    factorial(4)	4 × factorial(3)	waits for factorial(3)
+    factorial(3)	3 × factorial(2)	waits for factorial(2)
+    factorial(2)	2 × factorial(1)	waits for factorial(1)
+    factorial(1)	Hits base case, returns 1	1
+    factorial(2)	2 × 1 = 2	2
+    factorial(3)	3 × 2 = 6	6
+    factorial(4)	4 × 6 = 24	24
+    factorial(5)	5 × 24 = 120	120
+
+
+    Summary:
+    1. Function keeps calling itself until n === 1
+    2. At n = 1, it stops (base case) and starts returning back up.
+    3. Each step multiplies the result by n until the final result is returned!
+
+
+
+Q2: But it is returning return n * factorial(n - 1); than where this return saves and it functions explain properly interlay ?
+A2: When a function calls itself recursively, JavaScript keeps track of each function call using a stack.
+
+    You can imagine the stack like a pile of plates.
+    Each new function call is placed on top of the previous one.
+
+    Let's go step by step.
+
+    First Call:
+    factorial(3)
+    return 3 * factorial(2)
+
+    Second Call:
+    factorial(2)
+    return 2 * factorial(1)
+
+    Pause → need result of factorial(1).
+
+    Third Call:
+    factorial(1)
+    return 1
+
+
+    Call Stack at This Point:
+    | factorial(3) → waiting: 3 * factorial(2) |
+    | factorial(2) → waiting: 2 * factorial(1) |
+    | factorial(1) → returns: 1                |
+
+
+    Now Unwinding the Stack (returning back values):
+
+    Step 1:
+    factorial(1) returns 1 → sent back to factorial(2):
+    factorial(2) = 2 * 1 = 2
+
+    Step 2:
+    factorial(2) returns 2 → sent back to factorial(3):
+    factorial(3) = 3 * 2 = 6
+
+    FINAL OUTPUT:
+    factorial(3) = 6
+
+    Diagram:
+    CALL STACK (Top to Bottom):
+
+    | factorial(3) waiting for factorial(2) |
+    | factorial(2) waiting for factorial(1) |
+    | factorial(1) hits base case → returns 1 |
+
+
+    Now moving back UP:
+    factorial(1) returns → factorial(2) calculates → factorial(3) calculates → DONE!
+
+
+     Where are the values saved?
+        The Call Stack saves:
+
+        Each function’s own version of n.
+        The point at which it paused (waiting for the smaller factorial).
+        When the smallest one finishes (factorial(1)), the stack starts unwinding backward, multiplying the results.
+
+    
+    Think of it like:
+
+        You have a pile of boxes (calls), each box has:
+
+        The value of n (current number)
+        A pending multiplication
+        You keep stacking boxes till you hit n = 1 → base case.
+        Then, you start opening boxes from the top, completing the multiplication one by one.
+
+    
+     Summary:
+
+        Every return is stored in the call stack memory.
+        Each function call waits for the result from the next smaller function call.
+        Once base case returns, each paused function resumes and calculates its part.
+
+
+
+
+
+
+
+
+
+
+
+
