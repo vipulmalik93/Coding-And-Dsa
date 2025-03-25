@@ -138,6 +138,7 @@ function printTable (count, upto) {
 
 
     //  approach2:  using recursion
+    // to understand about recursion more please refer pdf folder in javascript coding folder.
     function calculateFactorial (num) {
                 if(num === 1) {
                     return 1;
@@ -181,17 +182,133 @@ function countDigits2(number) {
 
 
 // Q12. Write a program to find the largest number in an array.
-function largestNumberInArray (array) {
-    let largest = array[0];
-    
-    for(let i = 0; i < array.length; i++) {
-        if(array[i] > largest) {
-            largest = array[i]
+        // approach1...
+        function largestNumberInArray (array) {
+            let largest = array[0];
+            
+            for(let i = 0; i < array.length; i++) {
+                if(array[i] > largest) {
+                    largest = array[i]
+                }
+            }
+            
+            console.warn("largestNumberInArray:", largest)
         }
+
+        // approach2...
+        // swap two numbers;;
+
+        let count = 0;
+        function xyz (a) { 
+
+        for(let i = 0 ; i < a.length; i++) {
+            
+                if( i  === a.length - 1) {
+                    return a[i]
+                }
+                
+                if(a[i] > a[i + 1]) {
+                a[i + 1] = a[i]
+                } 
+        }
+        }
+
+        console.log(xyz([5, 3, 9, 2, 15, 1]))
+
+
+
+
+// Q13. Write a program to reverse a given string.
+        // approac1:
+                function reverseString (a) { 
+                    let newString = '';
+                    for(let i = a.length -1 ; i>=0; i--) {    
+                        newString += a[i]
+                    }   
+                    return newString;
+                }
+
+
+
+        // approach2: 
+            //  .split("") converts the string into an array of characters.
+            //  .reverse() reverses the array.
+            //  .join("") converts the array back into a string.
+
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+        }
+
+
+
+        // approach3:
+                // Using Recursion (Advanced)
+                // The function calls itself with str.slice(1), removing the first character.
+                //    The last character gets added at the end in each recursive step.
+
+                function reverseString(str) {
+                    if (str === "") return "";
+                    return reverseString(str.slice(1)) + str[0];
+                }
+                
+                console.log(reverseString("hello"));
+
+
+        // approach4:
+            // Using reduce()
+            // array.reduce((accumulator, currentValue) => { ... }, initialValue)
+
+        function reverseString(str) {
+            return str.split("").reduce((reversed, char) => char + reversed, "");
+        }
+
+
+
+// Q14.Write a program to check if a string is a palindrome (same forwards and backwards).
+
+       // approach1:
+       function palindrome (a) { 
+        let isPalindrome = true;
+        let j  = a.length - 1;
+         for(let i = 0 ; i < a.length; i++) {
+                if(i > j) {
+                    return isPalindrome;
+                } else { 
+                    if(a[i] != a[j]) {
+                          isPalindrome= false;
+                    }
+                }
+                j--;
+           
+         }
+         
+         return isPalindrome;
+         
+       }
+
+
+    //    approach2:
+    function isPalindrome(str) {
+        for (let i = 0; i < Math.floor(str.length / 2); i++) {
+            if (str[i] !== str[str.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
     }
+ 
     
-    console.warn("largestNumberInArray:", largest)
-}
+       
+                
+        
+     
+
+
+
+
+
+
+
   
   
 
@@ -243,6 +360,10 @@ function largestNumberInArray (array) {
 // countDigits2(-10)
 
 // largestNumberInArray([-1,-2,-30,-4,-5]);
+
+// reverseString('abc);
+
+// isPalindrome('abcd')
 
  
  
