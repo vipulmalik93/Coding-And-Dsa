@@ -199,7 +199,7 @@ function countDigits2(number) {
         // swap two numbers;;
 
         let count = 0;
-        function xyz (a) { 
+        function largestNumberInArray1 (a) { 
 
         for(let i = 0 ; i < a.length; i++) {
             
@@ -213,14 +213,14 @@ function countDigits2(number) {
         }
         }
 
-        console.log(xyz([5, 3, 9, 2, 15, 1]))
+     
 
 
 
 
 // Q13. Write a program to reverse a given string.
         // approac1:
-                function reverseString (a) { 
+                function reverseString1 (a) { 
                     let newString = '';
                     for(let i = a.length -1 ; i>=0; i--) {    
                         newString += a[i]
@@ -235,7 +235,7 @@ function countDigits2(number) {
             //  .reverse() reverses the array.
             //  .join("") converts the array back into a string.
 
-        function reverseString(str) {
+        function reverseString2(str) {
             return str.split("").reverse().join("");
         }
 
@@ -246,12 +246,12 @@ function countDigits2(number) {
                 // The function calls itself with str.slice(1), removing the first character.
                 //    The last character gets added at the end in each recursive step.
 
-                function reverseString(str) {
+                function reverseString3(str) {
                     if (str === "") return "";
-                    return reverseString(str.slice(1)) + str[0];
+                    return reverseString3(str.slice(1)) + str[0];
                 }
                 
-                console.log(reverseString("hello"));
+             
 
 
         // approach4:
@@ -266,6 +266,10 @@ function countDigits2(number) {
 
 // Q14.Write a program to check if a string is a palindrome (same forwards and backwards).
 
+            //  A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. 
+            //    In other words, a prime number cannot be formed by multiplying two smaller natural numbers.
+            // -numbers are not prime, 0 not prime, 1 not prime.
+            //  2 is prime.
        // approach1:
        function palindrome (a) { 
         let isPalindrome = true;
@@ -299,7 +303,173 @@ function countDigits2(number) {
  
     
        
-                
+//Q15. Write a function to check if a number is prime.
+
+        // approach1:
+            function isPrime (num) {
+                for(let i = 2; i < 10; i++) {
+                    if(i != num) {
+                        if( num % i == 0) {
+                            return false;
+                        }
+                    
+                    }
+        }
+        
+                    if(num < 2)  {
+                        return false;
+                    } else  {
+                        return true;
+                    }
+                        
+        }
+
+
+
+// Q16.  Write a function to return the sum of all numbers in an array.
+
+
+        // APPROACH1:
+
+            function sumOfArray1 (arr) {
+                let sum = 0;
+                for(let i = 0; i < arr.length; i++) {
+                        sum += arr[i]
+                }
+                console.log("sumOfArray:", sum)
+            }
+
+
+        // APPROACH2:
+            // here, 0 is the second argument at reduce method and in reduce the second argument i.e refered as initial value.
+            // The initial value to be used as the first argument for the first call of the callback function. If not provided, 
+            // the first element of the array is used as the accumulator, and the iteration starts from the second element.
+
+            //  if we don't provide 0 here and want to check the sum of an empty array than we in that case we get an error 
+            // that  Reduce of empty array with no initial value.
+            // With no initial value, calling reduce() will throw an error, because there are no elements to use as the initial
+            //  value, and reduce() doesn't know what to start with.
+            // With an initial value, like 0, the result would be 0 because reduce() will simply return the initial value when 
+            // the array is empty.
+
+
+        function sumOfArray2 (arr) {
+           let sum = arr?.reduce((acc, currentValue) => acc + currentValue, 0)
+            console.log("sumOfArray:", sum)
+        }
+
+
+
+
+// Q17. Write a function that takes two numbers as arguments and returns their greatest common divisor (GCD).
+
+
+    function calculateGCD(a,b) {
+        while (b !== 0) {
+            let temp = b;     
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    // STEPS are going on in the above code..
+    // a = 15; b =45
+    // a=45; b=15
+    // b=0; a= 15;
+
+
+
+
+// Q18. Write a program to print the Fibonacci series up to n terms.
+
+function fibonacci1(n) {
+    let a = 0, b = 1, temp;
+    
+    console.log(a); // First Fibonacci number
+    if (n > 1) console.log(b); // Second Fibonacci number
+
+    for (let i = 2; i < n; i++) {
+        temp = a + b;
+        console.log(temp);
+        a = b;
+        b = temp;
+    }
+}
+
+
+
+
+function myFibonacci(n) {
+    let n1=0;
+    let n2=1;
+    let temp;
+    
+    if(n <1) console.log('0');
+    if(n > 0) {console.log('0');console.log("1")} 
+    
+   while (n > 2) {
+       temp = n2;
+       n2 = n1 + n2;
+       n1= temp
+       n--;
+       console.log(n2)
+   }
+}
+
+
+
+
+function recursionFibonacci(n) {
+    if (n < 2) {
+        return n;
+    }
+    return recursionFibonacci(n - 1) + recursionFibonacci(n - 2);
+}
+
+
+function fibonacciForLoop(n) {
+    let a = 0, b=1, temp;
+    console.log(a);
+    if(n > 1) console.log(b);
+      
+    for(let i = 2; i < n ; i++) {
+        temp = a+b;
+        a = b;
+        b = temp;
+        console.log(temp);
+    }
+
+}
+
+
+
+
+//Q19. Write a program to check if a number is an Armstrong number (e.g., 153 = 1³ + 5³ + 3³).
+
+
+
+function armstrongNumber(n) {
+      let number = n.toString();
+      let isTotal = 0
+
+      for(let i = 0 ; i < number?.length; i++ ) {
+        isTotal += number[i] * number[i] * number[i] 
+      }
+
+
+      if(isTotal == n) {
+            return true;
+      } else {
+        return false;
+      }
+}
+
+
+
+  
+
+
         
      
 
@@ -360,10 +530,29 @@ function countDigits2(number) {
 // countDigits2(-10)
 
 // largestNumberInArray([-1,-2,-30,-4,-5]);
+//    console.log(largestNumberInArray1([5, 3, 9, 2, 15, 1]))
 
-// reverseString('abc);
+// reverseString1('abc);
+// reverseString2('abc);
+// reverseString3('abc);
 
 // isPalindrome('abcd')
+
+//  isPrime(3)
+
+//  sumOfArray1([1,2,3,4])
+// sumOfArray2([1,2,3,4])
+
+
+//   console.log("GCD:", calculateGCD(15,45)) 
+
+// fibonacci1(2);
+// myFibonacci(3);
+// console.log(recursionFibonacci(3)); 
+// fibonacciForLoop(5);   
+
+
+console.warn( armstrongNumber(154));
 
  
  
