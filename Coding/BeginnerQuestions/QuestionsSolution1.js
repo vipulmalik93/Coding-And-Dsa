@@ -266,10 +266,6 @@ function countDigits2(number) {
 
 // Q14.Write a program to check if a string is a palindrome (same forwards and backwards).
 
-            //  A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. 
-            //    In other words, a prime number cannot be formed by multiplying two smaller natural numbers.
-            // -numbers are not prime, 0 not prime, 1 not prime.
-            //  2 is prime.
        // approach1:
        function palindrome (a) { 
         let isPalindrome = true;
@@ -304,25 +300,76 @@ function countDigits2(number) {
     
        
 //Q15. Write a function to check if a number is prime.
+            //  A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. 
+            //    In other words, a prime number cannot be formed by multiplying two smaller natural numbers.
+            // -numbers are not prime, 0 not prime, 1 not prime.
+            //  2 is prime.
 
         // approach1:
-            function isPrime (num) {
-                for(let i = 2; i < 10; i++) {
-                    if(i != num) {
-                        if( num % i == 0) {
-                            return false;
+                                    
+                function checkPrime(n) {
+                    // Initialize a counter variable to
+                    // count the number of factors.
+                    let cnt = 0;
+                    // Loop through numbers from 1 to n.
+                    for (let i = 1; i <= n; i++) {
+                        // If n is divisible by i
+                        // without any remainder.
+                        if (n % i === 0) {
+                            // Increment the counter.
+                            cnt = cnt + 1;
                         }
-                    
                     }
-        }
-        
-                    if(num < 2)  {
-                        return false;
-                    } else  {
+
+                    // If the number of
+                    // factors is exactly 2.
+                    if (cnt === 2) {
+                        // Return true, indicating
+                        // that the number is prime.
                         return true;
                     }
-                        
+                    // If the number of
+                    // factors is not 2.
+                    else {
+                        // Return false, indicating
+                        // that the number is not prime.
+                        return false;
+                    }
+                }
+
+                function isPrimeNumber1(n) {
+                
+                    let isPrime = checkPrime(n);
+                    if (isPrime) {
+                        console.log(n + " is a prime number.");
+                    } else {
+                        console.log(n + " is not a prime number.");
+                    }
+                }
+
+    // approach2:
+
+
+    function isPrimeNumber2(num) {
+        if (num < 2) {
+            return false;
         }
+
+        // The loop runs till i <= √num because:
+
+        // If a number has any factors other than 1 and itself, one of those factors must be less than or equal to the 
+        // square root of the number.
+        
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+
 
 
 
@@ -538,7 +585,8 @@ function armstrongNumber(n) {
 
 // isPalindrome('abcd')
 
-//  isPrime(3)
+// isPrimeNumber1(5)
+// isPrimeNumber2(5);
 
 //  sumOfArray1([1,2,3,4])
 // sumOfArray2([1,2,3,4])
@@ -552,7 +600,7 @@ function armstrongNumber(n) {
 // fibonacciForLoop(5);   
 
 
-console.warn( armstrongNumber(154));
+// console.warn( armstrongNumber(154));
 
  
  
