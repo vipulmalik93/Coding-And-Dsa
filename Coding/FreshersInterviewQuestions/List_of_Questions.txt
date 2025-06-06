@@ -1,0 +1,88 @@
+Basic Problems (Logic & Loops)
+1. Palindrome Check – Check if a given string or number is a palindrome
+2. Fibonacci Series – Generate the Fibonacci sequence up to n terms
+3. Prime Number Check – Determine if a number is prime
+4. Factorial Calculation – Find the factorial of a number
+5. Armstrong Number – Check if a number is an Armstrong number
+6. Reverse a Number – Reverse the digits of an integer
+7. Sum of Digits – Calculate the sum of all digits in a number
+8. Swapping Two Numbers – Swap two variables without using a third variable
+9. Greatest Common Divisor (GCD) – Find GCD of two numbers using the Euclidean algorithm
+10. Least Common Multiple (LCM) – Find LCM of two numbers
+11. Even or Odd Check – Check if a number is even or odd
+12. Largest of Three Numbers – Find the largest among three numbers
+13. Square and Cube – Calculate square and cube of a number
+
+String Manipulation
+1. Reverse a String – Reverse a given string
+2. Count Vowels and Consonants – Count vowels and consonants in a string
+3. Remove Duplicates from a String – Remove duplicate characters from a string
+4. Check Anagram – Check if two strings are anagrams
+5. Find First Non-Repeating Character – Return the first unique character in a string
+6. Check if String is a Pangram – Verify if a string contains all alphabets (A-Z)
+
+Array Problems
+1. Find the Largest & Smallest Element – Find max and min element in an array
+2. Reverse an Array – Reverse the elements of an array
+3. Find Second Largest Element – Find the second largest number in an array
+4. Find Duplicates in an Array – Detect duplicate elements
+5. Remove Duplicates from an Array
+6. Sort an Array – Bubble, Selection, Insertion Sort
+7. Merge Two Sorted Arrays – Merge two sorted arrays into one
+8. Find Missing Number in an Array – From a sequence like 1 to N
+9. Find Pair with Sum K – Find two numbers in an array that sum to K
+10. Move Zeros to End – Move all zeros to the end
+11. Intersection & Union of Two Arrays
+12. Rotate an Array – Left/Right by K positions
+
+Matrix (2D Array) Problems
+1. Transpose of a Matrix – Convert rows to columns
+2. Rotate Matrix by 90 Degrees
+3. Check if Matrix is Symmetric
+4. Sum of Diagonal Elements
+5. Spiral Order Traversal of a Matrix
+
+Searching & Sorting
+1. Binary Search
+2. Linear Search
+3. Merge Sort
+4. Quick Sort
+
+Recursion & Backtracking
+1. Tower of Hanoi
+2. Recursive Fibonacci – Find nth Fibonacci number using recursion
+3. Power of a Number (x^n)
+4. Factorial Using Recursion
+5. Print All Subsequences of a String
+6. N-Queens Problem
+
+Bit Manipulation
+1. Check if a Number is Power of Two
+2. Count Set Bits in a Number
+3. Find Unique Element in Array – XOR method
+
+Number Problems
+1. Perfect Number Check
+2. Decimal to Binary & Vice Versa
+3. Harshad Number Check
+
+Data Structure-Based Problems
+1. Stack Using Array or Linked List
+2. Queue Using Array or Linked List
+3. Reverse a Linked List
+4. Detect Loop in Linked List – Floyd’s Algorithm
+5. Find Middle Element in Linked List
+6. Merge Two Sorted Linked Lists
+7. Intersection Point of Two Linked Lists
+
+Functions
+1. Prime Checker Function
+2. Sum of Array Function
+3. GCD Function
+
+Miscellaneous
+1. Print Numbers 1 to 10 using loop
+2. Multiplication Table
+3. Count Digits in Number
+4. Balanced Parentheses Check
+5. Next Greater Element in Array
