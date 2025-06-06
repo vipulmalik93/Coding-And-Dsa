@@ -410,7 +410,7 @@ function countDigits2(number) {
 
 // Q17. Write a function that takes two numbers as arguments and returns their greatest common divisor (GCD).
 
-
+    // Approach1:
     function calculateGCD(a,b) {
         while (b !== 0) {
             let temp = b;     
@@ -427,9 +427,21 @@ function countDigits2(number) {
 
 
 
+    // Approach2:
+    function calculateGCDRecursively(a, b) {
+        if (b === 0) {
+          return a;
+        }
+        return calculateGCDRecursively(b, a % b);
+      }
+
+
+
 
 // Q18. Write a program to print the Fibonacci series up to n terms.
 
+
+// APPROACH 1:
 function fibonacci1(n) {
     let a = 0, b = 1, temp;
     
@@ -446,7 +458,7 @@ function fibonacci1(n) {
 
 
 
-
+// APPROACH 2:
 function myFibonacci(n) {
     let n1=0;
     let n2=1;
@@ -466,7 +478,7 @@ function myFibonacci(n) {
 
 
 
-
+// APPROACH 3:
 function recursionFibonacci(n) {
     if (n < 2) {
         return n;
@@ -474,7 +486,16 @@ function recursionFibonacci(n) {
     return recursionFibonacci(n - 1) + recursionFibonacci(n - 2);
 }
 
+function printFibonacciSeries(n) {
 
+    for (let i = 0; i < n; i++) {
+      console.log(recursionFibonacci(i));
+  
+    } 
+  }
+
+
+// APPROACH 4:
 function fibonacciForLoop(n) {
     let a = 0, b=1, temp;
     console.log(a);
@@ -593,10 +614,11 @@ function armstrongNumber(n) {
 
 
 //   console.log("GCD:", calculateGCD(15,45)) 
+//   console.log("GCD:", calculateGCDRecursively(15, 45))
 
 // fibonacci1(2);
 // myFibonacci(3);
-// console.log(recursionFibonacci(3)); 
+// console.log(printFibonacciSeries(5)); 
 // fibonacciForLoop(5);   
 
 

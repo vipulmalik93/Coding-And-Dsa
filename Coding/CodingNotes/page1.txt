@@ -1,0 +1,92 @@
+Q1: Math.floor()
+A1: In JavaScript, Math.floor() is a built-in function used to round a number down to the nearest integer.
+
+        console.log(Math.floor(4.9));   // Output: 4
+        console.log(Math.floor(4.1));   // Output: 4
+        console.log(Math.floor(-4.9));  // Output: -5
+        console.log(Math.floor(-4.1));  // Output: -5
+        console.log(Math.floor(5));     // Output: 5
+        console.log(Math.floor(-4.3)); // Output: -5
+
+
+
+Q2: Math.ceil()
+A2: Math.ceil() rounds a number up to the nearest integer
+
+        console.log(Math.ceil(4.3));    // Output: 5
+        console.log(Math.ceil(4.9));    // Output: 5
+        console.log(Math.ceil(-4.3));   // Output: -4
+        console.log(Math.ceil(-4.9));   // Output: -4
+        console.log(Math.ceil(5));      // Output: 5
+
+Q3: Math.abs()
+A3: Math.abs() returns the absolute value of a number — that is, it removes the sign and makes the number non-negative.
+
+        console.log(Math.abs(5));     // Output: 5
+        console.log(Math.abs(-5));    // Output: 5
+        console.log(Math.abs(0));     // Output: 0
+        console.log(Math.abs(-3.14)); // Output: 3.14
+        console.log(Math.abs("10"));  // Output: 10  (string is converted to number)
+        console.log(Math.abs("-7"));  // Output: 7
+        console.log(Math.abs(null));  // Output: 0
+        console.log(Math.abs("abc")); // Output: NaN
+
+    If input is not a number (like a string that can’t be converted), it returns NaN.
+
+    Math.abs() is very useful in:
+
+    Calculating distance between two points
+    Handling positive-only logic
+    Ensuring values like length, height, or count don’t go negative
+
+Q4: split()
+A4: The split() method is used to split a string into an array of substrings, based on a specified separator.
+
+    SYNTAX: string.split(separator, limit)
+
+    separator (optional): Specifies the character(s) or regex pattern at which to split the string. If omitted, the whole string becomes one element in the array.
+    limit (optional): Limits the number of splits.
+
+        const str = "vipul malik";
+        // Split by space
+        console.log(str.split(" "));  // Output: ["vipul", "malik"]
+
+        // Split by character 'i'
+        console.log(str.split("i"));  // Output: ["v", "pul mal", "k"]
+
+        // Split by empty string (splits every character)
+        console.log(str.split(""));   // Output: ["v", "i", "p", "u", "l", " ", "m", "a", "l", "i", "k"]
+
+        // Limit splits to 2 parts
+        console.log(str.split(" ", 1));  // Output: ["vipul"]
+
+
+Q5: join()
+A4: The join() method is used to combine the elements of an array into a single string, with an optional separator between the elements.
+
+    SYNTAX: array.join(separator)
+
+        const arr = ['v', 'i', 'p', 'u', 'l'];
+
+        // Join with no separator (empty string)
+        console.log(arr.join(''));     // Output: "vipul"
+
+        // Join with space
+        console.log(arr.join(' '));    // Output: "v i p u l"
+
+        // Join with dash
+        console.log(arr.join('-'));    // Output: "v-i-p-u-l"
+
+        // Join with default separator (comma)
+        console.log(arr.join());       // Output: "v,i,p,u,l"
+
+     Convert an array of characters back into a string.
+     Join words with spaces, commas, or other delimiters.
+     Format arrays as CSV or other string formats.
+
+
+
+
+
+
+       
