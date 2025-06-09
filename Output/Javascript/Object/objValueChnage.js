@@ -30,4 +30,4 @@ console.log("obj1:", obj1,   "realCity:", realCity);
 let obj2 = { name: "vipul" };
 let refToObj = obj2; // Stores a reference to obj
 obj2 = { name: "malik" }; // Creates a new object!
-console.log( "obj2:", obj2, "refToObj",  refToObj.name); // vipul (old object)
+console.log( "obj2:", obj2,"refToObj", refToObj, "refToObj.name",  refToObj.name); // vipul (old object)
